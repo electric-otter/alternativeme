@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlternativeMe - Find Better Alternatives</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#007bff',secondary:'#4a5568'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+        }
+        input:focus {
+            outline: none;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#" class="text-2xl font-['Pacifico'] text-primary">AlternativeMe</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">Categories</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">Top Alternatives</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">Compare</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors cursor-pointer">About</a>
+                <button class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap hover:bg-blue-600 transition-colors cursor-pointer">Submit Alternative</button>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden w-10 h-10 flex items-center justify-center cursor-pointer">
+                <i class="ri-menu-line ri-lg text-gray-700"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu (Hidden by default) -->
+    <div class="hidden fixed inset-0 bg-white z-40 pt-16">
+        <div class="container mx-auto px-4 py-6 flex flex-col space-y-6">
+            <a href="#" class="text-gray-700 text-lg py-2 border-b border-gray-100 cursor-pointer">Categories</a>
+            <a href="#" class="text-gray-700 text-lg py-2 border-b border-gray-100 cursor-pointer">Top Alternatives</a>
+            <a href="#" class="text-gray-700 text-lg py-2 border-b border-gray-100 cursor-pointer">Compare</a>
+            <a href="#" class="text-gray-700 text-lg py-2 border-b border-gray-100 cursor-pointer">About</a>
+            <button class="bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap hover:bg-blue-600 transition-colors cursor-pointer">Submit Alternative</button>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section pt-24 pb-16 md:py-32">
+        <div class="container mx-auto px-4 w-full">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Find Better <br>Alternatives</h1>
+                <p class="text-lg md:text-xl text-gray-700 mb-8">Discover the best alternatives to popular software, apps, and services. Make informed decisions with our comprehensive comparison platform.</p>
+                <div class="relative max-w-xl">
+                    <input type="text" placeholder="Search for alternatives to..." class="w-full px-5 py-3 pr-12 border border-gray-300 !rounded-button text-gray-700 bg-white">
+                    <button class="absolute right-0 top-0 h-full px-4 bg-primary text-white !rounded-r-button cursor-pointer">
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </button>
+                </div>
+                <p class="text-gray-500 mt-3">Popular: Photoshop, Spotify, Netflix, Slack, Zoom</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Categories Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Browse by Category</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Find alternatives in these popular categories</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Category 1 -->
+                <div class="bg-gray-50 p-6 rounded shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+                        <i class="ri-computer-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Productivity</h3>
+                    <p class="text-gray-600 text-sm">142 alternatives</p>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="bg-gray-50 p-6 rounded shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+                        <i class="ri-image-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Design</h3>
+                    <p class="text-gray-600 text-sm">98 alternatives</p>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="bg-gray-50 p-6 rounded shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+                        <i class="ri-video-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Streaming</h3>
+                    <p class="text-gray-600 text-sm">76 alternatives</p>
+                </div>
+                
+                <!-- Category 4 -->
+                <div class="bg-gray-50 p-6 rounded shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+                        <i class="ri-message-3-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Communication</h3>
+                    <p class="text-gray-600 text-sm">124 alternatives</p>
+                </div>
+                
+                <!-- Category 5 -->
+                <div class="bg-gray-50 p-6 rounded shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+                        <i class="ri-code-box-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Development</h3>
+                    <p class="text-gray-600 text-sm">187 alternatives</p>
+                </div>
+                
+                <!-- Category 6 -->
+                <div class="bg-gray-50 p-6 rounded shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+                        <i class="ri-shopping-bag-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">E-commerce</h3>
+                    <p class="text-gray-600 text-sm">93 alternatives</p>
+                </div>
+                
+                <!-- Category 7 -->
+                <div class="bg-gray-50 p-6 rounded shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+                        <i class="ri-game-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Gaming</h3>
+                    <p class="text-gray-600 text-sm">112 alternatives</p>
+                </div>
+                
+                <!-- Category 8 -->
+                <div class="bg-gray-50 p-6 rounded shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+                        <i class="ri-shield-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Security</h3>
+                    <p class="text-gray-600 text-sm">68 alternatives</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Popular Alternatives Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Popular Alternatives</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Most searched alternatives on our platform</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Alternative 1 -->
+                <div class="bg-white p-6 rounded shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://1000logos.net/wp-content/uploads/2020/03/Photoshop-Logo-2013.jpg" alt="Photoshop Alternative" class="w-12 h-12 rounded mr-3 object-cover object-top">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900">Alternatives to Photoshop</h3>
+                            <p class="text-gray-500 text-sm">Photo Editing Software</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Find free and paid alternatives to Adobe Photoshop for professional photo editing.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">GIMP</span>
+                        <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Affinity Photo</span>
+                        <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Pixlr</span>
+                        <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">+12 more</span>
+                    </div>
+                    <a href="#" class="text-primary font-medium hover:underline cursor-pointer">View all alternatives →</a>
+                </div>
+                
+                <!-- Alternative 2 -->
+                <div class="bg-white p-6 rounded shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://newsroom.spotify.com/media-kit/logo-and-brand-assets/" alt="Spotify Alternative" class="w-12 h-12 rounded mr-3 object-cover object-top">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900">Alternatives to Spotify</h3>
+                            <p class="text-gray-500 text-sm">Music Streaming Service</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Discover other music streaming platforms with different features and pricing models.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Apple Music</span>
+                        <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Tidal</span>
+                        <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Deezer</span>
+                        <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">+9 more</span>
+                    </div>
+                    <a href="#" class="text-primary font-medium hover:underline cursor-pointer">View all alternatives →</a>
+                </div>
+                
+                <!-- Alternative 3 -->
+                <div class="bg-white p-6 rounded shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://static.vecteezy.com/system/resources/previews/012/871/376/non_2x/zoom-logo-in-blue-colors-meetings-app-logotype-illustration-free-png.png" alt="Zoom Alternative" class="w-12 h-12 rounded mr-3 object-cover object-top">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900">Alternatives to Zoom</h3>
+                            <p class="text-gray-500 text-sm">Video Conferencing</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Find other video conferencing solutions with better privacy, features, or pricing.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Google Meet</span>
+                        <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Microsoft Teams</span>
+                        <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">Jitsi</span>
+                        <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">+8 more</span>
+                    </div>
+                    <a href="#" class="text-primary font-medium hover:underline cursor-pointer">View all alternatives →</a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <button class="bg-white text-primary border border-primary px-6 py-3 !rounded-button whitespace-nowrap hover:bg-blue-50 transition-colors font-medium cursor-pointer">View All Popular Alternatives</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How AlternativeMe Works</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Find the perfect alternative in three simple steps</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full mx-auto mb-6">
+                        <i class="ri-search-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Search</h3>
+                    <p class="text-gray-600">Enter the name of a product or service you're looking to replace.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full mx-auto mb-6">
+                        <i class="ri-check-double-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Choose</h3>
+                    <p class="text-gray-600">Make an informed decision based on your specific needs and preferences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Footer -->
+    <footer class="bg-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Info -->
+                <div>
+                    <a href="#" class="text-2xl font-['Pacifico'] text-primary mb-4 inline-block cursor-pointer">AlternativeMe</a>
+                    <p class="text-gray-600 mb-4">Helping you find better alternatives since 2025.</p>
+                    </div>
+                </div>
+
+                
+                
+            
+            <div class="border-t border-gray-200 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-600 mb-4 md:mb-0">© 2025 AlternativeMe. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-600 hover:text-primary transition-colors cursor-pointer">Privacy Policy</a>
+                        <a href="#" class="text-gray-600 hover:text-primary transition-colors cursor-pointer">Terms of Service</a>
+                        <a href="#" class="text-gray-600 hover:text-primary transition-colors cursor-pointer">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.ri-menu-line').addEventListener('click', function() {
+            const mobileMenu = document.querySelector('.fixed.inset-0.bg-white.z-40');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
